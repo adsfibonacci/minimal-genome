@@ -43,12 +43,13 @@ candidates, tested = mcte(graph, iterations=500, max_depth=N)
 
 # print("Discovered doubles:", [ set(i) for i in candidates[2]] )
 # print("Discovered triples:", [ set(i) for i in candidates[3]] )
-print("Total tested:", len(tested))
+
 max_graph = list(graph.keys())[-1]
 max_candidate = list(candidates.keys())[-1] if len(candidates[list(candidates.keys())[-1]]) != 0 else list(candidates.keys())[-2]
 print(max_graph)
 print(max_candidate)
 print("True Max Depth: ", [ sorted(list(i)) for i in graph[max_graph]])
 print("Candidate Max Depth: ", [ sorted(list(i)) for i in candidates[max_candidate]])
+print("Total tested:", len(tested))
 # print("True Graph: ", graph)
 # print("Candidate Graph: ", candidates)

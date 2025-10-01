@@ -176,7 +176,7 @@ layers = generate_layers(
     base_prob=0.3,
     decay=0.85,
     new_elem_prob=0.1,
-    bad_spawn_prob=.05)
+    bad_spawn_prob=.15)
 # print(layers)
 # visualize_layers(layers)
 # 
@@ -193,4 +193,4 @@ layers = generate_layers(
 with open("/home/alex/Documents/Mutans Optimization/sample_genes.pkl", "wb") as f:
     pickle.dump(layers, f)
 # visualize_layers(layers)
-# print(layers)
+print(list(layers.keys())[-1])
