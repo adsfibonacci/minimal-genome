@@ -1,4 +1,3 @@
-# transformer_knockout_clean.py
 import numpy as np
 import pandas as pd
 import torch
@@ -12,7 +11,7 @@ from ast import literal_eval
 # -----------------------
 # Config / hyperparams
 # -----------------------
-DATA = "./data/"   # adjust path
+DATA = "./data/" # Root path, change based off computer file structure 
 n_genes = 1968
 embed_dim = 32
 n_heads = 4
@@ -86,8 +85,11 @@ np.save(DATA + "operons.npy", X)
 np.save(DATA + "response.npy", y)
 
 X_idx_all = [list(np.where(row == -1)[0]) for row in X]
-print(len(X_idx_all))
+print(X[0:10, 0:10])
 
+"""
+Custom Dataset loader class templated from PyTorch Dataset Class
+"""
 class KnockoutSetDataset(Dataset):
     def __init__(self, X, y):
         self.X = X
@@ -97,6 +99,9 @@ class KnockoutSetDataset(Dataset):
     def __getitem__(self, idx):
         return self.X[idx], self.y[idx]
 
+"""
+Padding function for the Dataloader that makes sure ensure the vector inputs are same dimension. 
+"""
 def collate_fn(batch):
     X_batch, y_batch = zip(*batch)
     lengths = [len(l) for l in X_batch]
@@ -111,9 +116,12 @@ def collate_fn(batch):
     pad_mask = (seqs == pad)  # True where padded
     return seqs, y_batch, pad_mask
 
-# -----------------------
-# Model
-# -----------------------
+
+"""
+Pass the padded genome sequences to the transformer to train on.
+The sets of knockouts are padded with the n_genes value since the column numbers range from 0 to n_genes - 1.
+The knockout set is padded to the maximum length of knockouts. 
+"""
 class SetTransformerClassifier(nn.Module):
     def __init__(self, n_genes, embed_dim, n_heads, num_layers, hidden_clf, dropout, pad_idx):
         super().__init__()
