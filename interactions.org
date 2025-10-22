@@ -1,0 +1,39 @@
+#+property: header-args:julia :session ssh:alex@192.168.1.149 :results replace
+#+begin_src julia :results none
+  using NPZ
+  using DataFrames
+  using GLM
+  using StatsModels
+
+  # Load data
+  X = npzread("data/operons.npy") |> Array{Float64};
+  y = npzread("data/response.npy") |> vec;
+
+  # Convert X to DataFrame with column names gene1, gene2, ...
+  n_genes = size(X, 2);
+  df = DataFrame(X, Symbol.("gene" .* string.(1:n_genes)));
+  df.y = y;
+
+  # Build formula with all pairwise interactions
+  gene_symbols = Symbol.("gene" .* string.(1:n_genes))
+  terms = join(string.(gene_symbols), " + ")
+  interaction_terms = join([ "$(a)&$(b)" for i=1:n_genes-1, j=i+1:n_genes
+                             let a=gene_symbols[i], b=gene_symbols[j] in a, b end], " + ")
+  formula = @eval @formula(y ~ $(Meta.parse(terms * " + " * interaction_terms)))
+
+  # Fit linear regression
+  model = lm(formula, df)
+
+  # Show coefficients and p-values
+  coefs = coef(model)
+  pvals = coeftable(model).cols[4]
+
+  println("Coefficients:")
+  println(coefs)
+  println("P-values:")
+  println(pvals)  
+#+end_src
+
+#+RESULTS:
+: nil
+

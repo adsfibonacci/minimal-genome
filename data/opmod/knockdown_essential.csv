@@ -1,0 +1,119 @@
+Plate_ID,Row,Col,Gene_ID,Golden_Gate_Enzyme,Payload_Name,PTag_1_ID,PTag_2_ID,Oralgen Gene ID,GI,SMU #,VIMSS (MicrobesOnline #),GeneID,colony_growth,liquid_growth,RawMaxOD,TimeMaxOD,PredVMax,TimePredVMax,PassColony,PassLiquid,PassMaxOD,PassTimeMaxOD,PassVMax,PassTimeVMax,PassAll,Pass5,Pass4,Pass3,Operon Map
+36,A,1,SMU_01,BsaI,KD_Payload_2,Tag_58,Tag_82,1,,,,,N,N,0.13,16.00333,2.9499999999999997e-24,1.33639,False,False,False,True,False,False,False,False,False,False,"[1, 2]"
+36,D,1,SMU_09,BsaI,KD_Payload_2,Tag_62,Tag_106,7,,,,,N,N,0.121,8.33667,7.54e-16,1.33639,False,False,False,True,False,False,False,False,False,False,"[7, 8, 9, 10, 11]"
+36,E,1,SMU_14,BsaI,KD_Payload_2,Tag_36,Tag_138,12,,,,,N,N,0.112,8.33667,3.58e-23,1.33639,False,False,False,True,False,False,False,False,False,False,"[12, 13]"
+36,A,2,SMU_23,BsaI,KD_Payload_2,Tag_7,Tag_29,19,,,,,N,N,0.118,16.00333,2.55e-22,1.33639,False,False,False,True,False,False,False,False,False,False,"[19, 20, 21]"
+36,E,4,SMU_80,BsaI,KD_Payload_2,Tag_29,Tag_128,73,,,,,N,N,0.129,8.33667,1.34e-20,1.33639,False,False,False,True,False,False,False,False,False,False,"[73, 74, 75, 76, 77, 78, 79, 80]"
+36,E,5,SMU_97,BsaI,KD_Payload_2,Tag_92,Tag_189,88,,,,,?,N,0.114,8.33667,2.22e-18,1.33639,False,False,False,True,False,False,False,False,False,False,[88]
+36,F,5,SMU_99,BsaI,KD_Payload_2,Tag_18,Tag_149,89,,,,,N,N,0.116,8.33667,1.11e-16,1.33639,False,False,False,True,False,False,False,False,False,False,[89]
+36,B,7,SMU_123,BbsI,KD_Payload_4,Tag_161,Tag_179,111,,,,,N,N,0.117,16.00333,5.27e-26,1.33639,False,False,False,True,False,False,False,False,False,False,[111]
+36,D,9,SMU_169,BsaI,KD_Payload_2,Tag_62,Tag_71,153,,,,,N,N,0.119,2.67,6.33e-23,1.33639,False,False,False,False,False,False,False,False,False,False,"[153, 154]"
+36,E,1,SMU_245,BsaI,KD_Payload_2,Tag_84,Tag_157,223,,,,,?,N,0.121,11.33667,5.15e-23,1.33639,False,False,False,True,False,False,False,False,False,False,"[223, 224]"
+37,H,2,SMU_291,BsaI,KD_Payload_2,Tag_14,Tag_175,263,,,,,N,N,0.192,24.00333,0.030493253,23.66667,False,False,False,True,False,False,False,False,False,False,[263]
+37,E,3,SMU_298,BsaI,KD_Payload_2,Tag_119,Tag_168,270,,,,,Y,N,0.122,20.00361,3e-17,1.33667,True,False,False,True,False,False,False,False,False,False,[270]
+37,B,4,SMU_307,BsaI,KD_Payload_2,Tag_133,Tag_174,278,,,,,N,N,0.132,24.00333,8.61e-16,1.33667,False,False,False,True,False,False,False,False,False,False,[278]
+37,E,4,SMU_317,BsaI,KD_Payload_2,Tag_21,Tag_71,286,,,,,N,N,0.117,4.67028,1.09e-13,1.33667,False,False,False,False,False,False,False,False,False,False,[286]
+37,A,5,SMU_330,BsaI,KD_Payload_2,Tag_42,Tag_74,297,,,,,N,N,0.111,9.33694,1.68e-17,1.33667,False,False,False,True,False,False,False,False,False,False,[297]
+37,E,5,SMU_336,BsaI,KD_Payload_2,Tag_141,Tag_175,303,,,,,N,N,0.177,24.00333,0.032882827,23.66667,False,False,False,True,False,False,False,False,False,False,"[303, 304, 305]"
+37,E,6,SMU_351,BbsI,KD_Payload_4,Tag_67,Tag_162,317,,,,,N,Y,1.776,20.00361,0.364226169,14.56667,False,True,True,True,True,True,False,True,True,True,"[317, 318, 319, 320, 321]"
+37,F,6,SMU_356,BsmBI/Esp3I,KD_Payload_6,Tag_82,Tag_191,322,,,,,N,Y,1.889,13.67,0.342499911,9.29667,False,True,True,True,True,True,False,True,True,True,[322]
+37,G,6,SMU_357,BbsI,KD_Payload_4,Tag_8,Tag_32,323,,,,,N,N,0.114,20.00361,9.05e-15,1.33667,False,False,False,True,False,False,False,False,False,False,"[323, 324, 325]"
+37,H,6,SMU_360,BsaI,KD_Payload_2,Tag_80,Tag_104,326,,,,,N,N,0.112,20.00361,8.32e-22,1.33667,False,False,False,True,False,False,False,False,False,False,[326]
+37,A,7,SMU_361,BsaI,KD_Payload_2,Tag_116,Tag_148,327,,,,,N,N,0.105,9.33694,1.98e-17,1.33667,False,False,False,True,False,False,False,False,False,False,[327]
+37,A,1,SMU_417,BsaI,KD_Payload_2,Tag_1,Tag_48,380,,,,,N,N,0.137,24.00333,0.000561158,22.40667,False,False,False,True,False,False,False,False,False,False,"[380, 381, 382, 383, 384, 385]"
+37,E,1,SMU_444,BsaI,KD_Payload_2,Tag_47,Tag_186,404,,,,,N,N,0.154,24.00333,1.46e-13,1.33667,False,False,False,True,False,False,False,False,False,False,[404]
+37,F,1,SMU_445,BsaI,KD_Payload_2,Tag_150,Tag_163,405,,,,,N,N,0.198,24.00333,0.013267691,23.66667,False,False,False,True,False,False,False,False,False,False,"[405, 406]"
+37,C,1,SMU_453,BsaI,KD_Payload_2,Tag_21,Tag_40,412,,,,,N,N,0.133,24.00333,2.76e-14,1.33667,False,False,False,True,False,False,False,False,False,False,"[412, 413, 414, 415]"
+37,D,1,SMU_457,BsaI,KD_Payload_2,Tag_2,Tag_122,416,,,,,N,N,0.124,24.00333,2.31e-14,1.33667,False,False,False,True,False,False,False,False,False,False,[416]
+37,E,1,SMU_458,BsaI,KD_Payload_2,Tag_2,Tag_9,417,,,,,N,N,0.12,2.33667,1.38e-21,1.33667,False,False,False,False,False,False,False,False,False,False,[417]
+37,G,1,SMU_464,BsaI,KD_Payload_2,Tag_11,Tag_138,423,,,,,N,N,0.206,24.00333,0.030748429,23.66667,False,False,False,True,False,False,False,False,False,False,"[423, 424]"
+38,A,1,SMU_469,BbsI,KD_Payload_3,Tag_91,Tag_177,427,,,,,N,N,0.116,5.66972,-1.59e-178,1.33639,False,False,False,False,False,False,False,False,False,False,[427]
+38,C,1,SMU_471,BsaI,KD_Payload_2,Tag_8,Tag_55,429,,,,,N,?,1.961,11.66972,0.402795384,6.24639,False,False,True,True,True,True,False,False,True,True,[429]
+38,G,1,SMU_478,BsaI,KD_Payload_2,Tag_9,Tag_98,434,,,,,N,N,0.125,4.66972,2.76e-24,1.33639,False,False,False,False,False,False,False,False,False,False,"[434, 435]"
+38,B,5,SMU_540,BsaI,KD_Payload_2,Tag_29,Tag_134,493,,,,,N,N,0.12,17.3375,4.96e-19,1.33639,False,False,False,True,False,False,False,False,False,False,[493]
+38,E,5,SMU_548,BbsI,KD_Payload_4,Tag_14,Tag_134,500,,,,,N,N,0.166,1.33639,-2.91e-16,18.09639,False,False,False,False,False,True,False,False,False,False,"[500, 501, 502]"
+38,F,5,SMU_551,BsaI,KD_Payload_2,Tag_21,Tag_54,503,,,,,N,N,0.138,6.00306,2.1e-24,1.33639,False,False,False,False,False,False,False,False,False,False,"[503, 504, 505, 506, 507, 508, 509]"
+38,G,5,SMU_558,BbsI,KD_Payload_4,Tag_24,Tag_125,510,,,,,N,N,0.12,16.33639,8.61e-15,1.33639,False,False,False,True,False,False,False,False,False,False,"[510, 511]"
+38,H,6,SMU_589,BsaI,KD_Payload_2,Tag_104,Tag_165,538,,,,,N,N,0.119,6.00306,1.42e-22,1.33639,False,False,False,False,False,False,False,False,False,False,[538]
+38,D,7,SMU_596,BsaI,KD_Payload_2,Tag_120,Tag_122,545,,,,,N,N,0.142,1.33639,-4.14e-23,1.33639,False,False,False,False,False,False,False,False,False,False,[545]
+38,F,7,SMU_599,BsaI,KD_Payload_2,Tag_121,Tag_165,548,,,,,N,N,0.123,6.00306,2.1e-15,1.33639,False,False,False,False,False,False,False,False,False,False,[548]
+38,A,8,SMU_603,BsaI,KD_Payload_2,Tag_102,Tag_154,551,,,,,N,N,0.111,7.00306,1.97e-16,1.33639,False,False,False,True,False,False,False,False,False,False,[551]
+38,E,9,SMU_624,BsaI,KD_Payload_2,Tag_85,Tag_117,568,,,,,N,N,0.118,6.00306,3.59e-18,1.33639,False,False,False,False,False,False,False,False,False,False,[568]
+38,G,1,SMU_649,BsaI,KD_Payload_2,Tag_57,Tag_61,593,,,,,N,N,0.126,16.00333,5.45e-22,1.33639,False,False,False,True,False,False,False,False,False,False,[593]
+38,H,1,SMU_650,BsaI,KD_Payload_2,Tag_31,Tag_115,594,,,,,N,N,0.127,16.00333,-1.8100000000000002e-21,1.33639,False,False,False,True,False,False,False,False,False,False,"[594, 595, 596, 597, 598, 599, 600]"
+38,H,1,SMU_674,BsaI,KD_Payload_2,Tag_13,Tag_178,618,,,,,N,N,0.119,13.67,-2.04e-19,1.33639,False,False,False,True,False,False,False,False,False,False,"[618, 619]"
+39,A,1,SMU_676,BsaI,KD_Payload_2,Tag_30,Tag_98,620,,,,,N,N,0.118,24.00278,1.65e-17,1.33639,False,False,False,True,False,False,False,False,False,False,[620]
+39,D,2,SMU_697,BsaI,KD_Payload_2,Tag_71,Tag_116,639,,,,,N,N,0.129,24.00278,1.36e-14,1.33639,False,False,False,True,False,False,False,False,False,False,"[639, 640, 641, 642, 643, 644, 645]"
+39,B,3,SMU_713,BsaI,KD_Payload_2,Tag_103,Tag_151,652,,,,,N,N,0.122,5.33611,3.6000000000000003e-22,1.33639,False,False,False,False,False,False,False,False,False,False,[652]
+39,C,3,SMU_714,BsaI,KD_Payload_2,Tag_169,Tag_181,653,,,,,N,N,0.207,24.00278,0.048107573,23.66639,False,False,False,True,False,False,False,False,False,False,[653]
+39,D,3,SMU_715,BsaI,KD_Payload_2,Tag_4,Tag_13,654,,,,,N,N,0.123,5.33611,3.01e-20,1.33639,False,False,False,False,False,False,False,False,False,False,"[654, 655, 656]"
+39,E,3,SMU_718c,BsaI,KD_Payload_1,Tag_77,Tag_84,657,,,,,N,N,1.174,24.00278,0.412359028,23.66639,False,False,True,True,True,False,False,False,False,False,[657]
+39,G,6,SMU_773c,BsmBI/Esp3I,KD_Payload_5,Tag_113,Tag_117,703,,,,,N,N,0.695,24.00278,0.251957616,23.66639,False,False,True,True,True,False,False,False,False,False,[703]
+39,A,7,SMU_775c,BsaI,KD_Payload_1,Tag_76,Tag_182,705,,,,,N,N,0.106,10.00306,2.54e-20,1.33639,False,False,False,True,False,False,False,False,False,False,[705]
+39,C,7,SMU_784,BbsI,KD_Payload_4,Tag_38,Tag_182,713,,,,,N,N,1.692,23.33639,0.397122812,17.58639,False,False,True,True,True,True,False,False,True,True,"[713, 714, 715, 716]"
+39,D,8,SMU_801,BsaI,KD_Payload_2,Tag_9,Tag_166,729,,,,,N,N,0.124,24.00278,0.000247681,15.89639,False,False,False,True,False,True,False,False,False,False,[729]
+39,H,9,SMU_821,BsaI,KD_Payload_2,Tag_89,Tag_143,747,,,,,N,N,0.113,22.66944,1.34e-17,1.33639,False,False,False,True,False,False,False,False,False,False,"[747, 748, 749]"
+39,A,1,SMU_824,BsaI,KD_Payload_2,Tag_99,Tag_140,750,,,,,?,N,0.226,24.00278,0.038994002,23.66639,False,False,False,True,False,False,False,False,False,False,"[750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760]"
+39,G,1,SMU_865,BsaI,KD_Payload_2,Tag_30,Tag_101,790,,,,,N,N,0.143,23.66972,0.000247168,18.90639,False,False,False,True,False,True,False,False,False,False,"[790, 791]"
+39,H,1,SMU_867,BsaI,KD_Payload_2,Tag_120,Tag_165,792,,,,,N,N,0.129,23.66972,1.02e-21,1.33639,False,False,False,True,False,False,False,False,False,False,"[792, 793]"
+40,E,1,SMU_898,BsaI,KD_Payload_2,Tag_37,Tag_178,821,,,,,N,Y,1.825,15.00361,0.377103626,9.85639,False,True,True,True,True,True,False,True,True,True,"[821, 822, 823]"
+40,F,1,SMU_901,BbsI,KD_Payload_4,Tag_49,Tag_129,824,,,,,N,N,0.119,18.00306,8.039999999999999e-23,1.33639,False,False,False,True,False,False,False,False,False,False,"[824, 825]"
+40,C,2,SMU_913,BsaI,KD_Payload_2,Tag_29,Tag_130,831,,,,,N,Y,1.843,13.00306,0.423987216,8.39639,False,True,True,True,True,True,False,True,True,True,"[831, 832, 833, 834, 835, 836, 837, 838]"
+40,D,2,SMU_923,BsaI,KD_Payload_2,Tag_40,Tag_134,839,,,,,N,N,1.944,9.67,0.373277372,6.02639,False,False,True,True,True,True,False,False,True,True,[839]
+40,F,2,SMU_925,BsaI,KD_Payload_2,Tag_5,Tag_191,841,,,,,N,Y,1.878,14.33639,0.377778827,9.60639,False,True,True,True,True,True,False,True,True,True,[841]
+40,C,3,SMU_937,BsaI,KD_Payload_2,Tag_83,Tag_86,852,,,,,N,N,0.118,10.33639,1.99e-16,1.33639,False,False,False,True,False,False,False,False,False,False,"[852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863]"
+40,D,3,SMU_950,BsaI,KD_Payload_2,Tag_78,Tag_132,864,,,,,N,N,0.12,5.00306,3.33e-18,1.33639,False,False,False,False,False,False,False,False,False,False,[864]
+40,A,4,SMU_959c,BsaI,KD_Payload_1,Tag_82,Tag_83,873,,,,,N,N,0.114,8.00306,-6.31e-22,1.33639,False,False,False,True,False,False,False,False,False,False,[873]
+40,H,3,SMU_960,BsaI,KD_Payload_2,Tag_42,Tag_66,874,,,,,N,N,0.119,8.00306,4.500000000000001e-22,1.33639,False,False,False,True,False,False,False,False,False,False,[874]
+40,E,4,SMU_972,BsaI,KD_Payload_2,Tag_26,Tag_189,885,,,,,N,N,0.121,5.00306,6.37e-17,1.33639,False,False,False,False,False,False,False,False,False,False,"[885, 886, 887, 888, 889]"
+40,H,5,SMU_993,BsaI,KD_Payload_2,Tag_21,Tag_134,904,,,,,N,N,0.115,10.33639,-4.23e-13,1.33639,False,False,False,True,False,False,False,False,False,False,"[904, 905]"
+40,B,7,SMU_1013c,BsaI,KD_Payload_1,Tag_58,Tag_177,924,,,,,N,N,0.114,3.33667,1.9099999999999997e-24,1.33639,False,False,False,False,False,False,False,False,False,False,[924]
+40,A,9,SMU_1046c,BsmBI/Esp3I,KD_Payload_5,Tag_27,Tag_147,955,,,,,N,N,0.117,15.00361,-1.15e-20,1.33639,False,False,False,True,False,False,False,False,False,False,[955]
+40,B,9,SMU_1048,BsaI,KD_Payload_2,Tag_113,Tag_164,957,,,,,N,Y,1.901,13.00306,0.445990132,8.93639,False,True,True,True,True,True,False,True,True,True,"[957, 958, 959, 960]"
+40,D,9,SMU_1053,BsaI,KD_Payload_2,Tag_160,Tag_161,961,,,,,N,Y,1.856,12.00333,0.413039355,8.01639,False,True,True,True,True,True,False,True,True,True,"[961, 962]"
+40,G,1,SMU_1114,BsaI,KD_Payload_1,Tag_71,Tag_97,1017,,,,,N,N,0.125,17.66972,-9.05e-15,1.33639,False,False,False,True,False,False,False,False,False,False,[1017]
+40,H,1,SMU_1115,BsaI,KD_Payload_2,Tag_48,Tag_124,1018,,,,,N,N,0.122,17.66972,-3.97e-15,1.33639,False,False,False,True,False,False,False,False,False,False,[1018]
+41,F,2,SMU_1187,BsaI,KD_Payload_1,Tag_63,Tag_116,1086,,,,,N,N,0.146,19.66972,3.29e-14,1.33639,False,False,False,True,False,False,False,False,False,False,[1086]
+41,A,3,SMU_1191,BsaI,KD_Payload_1,Tag_140,Tag_180,1090,,,,,N,N,0.106,19.66972,6.8e-288,1.33639,False,False,False,True,False,False,False,False,False,False,[1090]
+41,B,3,SMU_1192,BsaI,KD_Payload_1,Tag_121,Tag_184,1091,,,,,N,N,0.11,20.33667,4.97e-17,1.33639,False,False,False,True,False,False,False,False,False,False,[1091]
+41,A,4,SMU_1204,BbsI,KD_Payload_3,Tag_8,Tag_120,1100,,,,,N,N,0.106,19.66972,1.72e-41,1.33639,False,False,False,True,False,False,False,False,False,False,"[1100, 1101, 1102, 1103, 1104, 1105, 1106]"
+41,H,5,SMU_1247,BsaI,KD_Payload_1,Tag_111,Tag_117,1140,,,,,N,N,0.125,19.66972,8.52e-16,1.33639,False,False,False,True,False,False,False,False,False,False,"[1140, 1141, 1142]"
+41,B,7,SMU_1276c,BsaI,KD_Payload_1,Tag_1,Tag_109,1166,,,,,N,N,0.112,20.00333,2.3699999999999998e-23,1.33639,False,False,False,True,False,False,False,False,False,False,"[1166, 1167]"
+41,A,8,SMU_1288,BsaI,KD_Payload_1,Tag_12,Tag_61,1175,,,,,N,N,0.113,19.00333,2.68e-22,1.33639,False,False,False,True,False,False,False,False,False,False,"[1175, 1176, 1177]"
+41,E,9,SMU_1326,BsmBI/Esp3I,KD_Payload_5,Tag_67,Tag_75,1211,,,,,N,N,0.12,19.33639,6.62e-14,1.33639,False,False,False,True,False,False,False,False,False,False,[1211]
+42,C,3,SMU_1430,BsaI,KD_Payload_2,Tag_86,Tag_153,1305,,,,,N,N,0.113,19.00361,1.91e-22,1.33667,False,False,False,True,False,False,False,False,False,False,[1305]
+42,A,5,SMU_1461,BbsI,KD_Payload_3,Tag_93,Tag_106,1330,,,,,N,?,1.803,13.33667,0.423448418,8.40667,False,False,True,True,True,True,False,False,True,True,"[1330, 1331, 1332, 1333, 1334, 1335]"
+42,B,5,SMU_1467,BsaI,KD_Payload_1,Tag_126,Tag_188,1336,,,,,N,?,1.861,12.33694,0.458960171,7.38667,False,False,True,True,True,True,False,False,True,True,[1336]
+42,A,7,SMU_1512,BsaI,KD_Payload_1,Tag_118,Tag_161,1374,,,,,N,N,0.113,19.00361,1.41e-19,1.33667,False,False,False,True,False,False,False,False,False,False,"[1374, 1375]"
+42,E,7,SMU_1534,BsaI,KD_Payload_1,Tag_14,Tag_77,1395,,,,,N,N,0.119,22.00333,4.0900000000000002e-22,1.33667,False,False,False,True,False,False,False,False,False,False,"[1395, 1396, 1397, 1398, 1399, 1400, 1401]"
+42,F,7,SMU_1542c,BsaI,KD_Payload_1,Tag_2,Tag_177,1402,,,,,N,N,0.122,20.00333,8.19e-43,1.33667,False,False,False,True,False,False,False,False,False,False,[1402]
+42,E,9,SMU_1587c,BsaI,KD_Payload_1,Tag_38,Tag_135,1441,,,,,N,N,0.121,21.67028,5.98e-16,17.42667,False,False,False,True,False,True,False,False,False,False,"[1441, 1442]"
+42,B,1,SMU_1619c,BsaI,KD_Payload_1,Tag_52,Tag_128,1471,,,,,N,N,0.331,24.00361,0.10884033,23.66667,False,False,True,True,True,False,False,False,False,False,"[1471, 1472, 1473]"
+42,D,1,SMU_1625,BsaI,KD_Payload_1,Tag_77,Tag_101,1477,,,,,N,N,0.123,24.00361,4.860000000000001e-21,1.33667,False,False,False,True,False,False,False,False,False,False,"[1477, 1478, 1479]"
+42,F,1,SMU_1629c,BsaI,KD_Payload_1,Tag_85,Tag_150,1481,,,,,N,?,1.793,16.67028,0.365807672,10.01667,False,False,True,True,True,True,False,False,True,True,[1481]
+42,A,1,SMU_1639,BbsI,KD_Payload_3,Tag_62,Tag_176,1490,,,,,N,N,0.111,21.33667,1.5400000000000002e-27,1.33667,False,False,False,True,False,False,False,False,False,False,[1490]
+43,E,1,SMU_1663,BsaI,KD_Payload_1,Tag_96,Tag_105,1513,,,,,N,N,0.106,18.67,7.98e-22,1.33667,False,False,False,True,False,False,False,False,False,False,[1513]
+43,D,2,SMU_1676c,BbsI,KD_Payload_3,Tag_89,Tag_142,1526,,,,,N,N,0.112,20.33667,1.8899999999999998e-24,1.33667,False,False,False,True,False,False,False,False,False,False,[1526]
+43,C,3,SMU_1687,BbsI,KD_Payload_3,Tag_2,Tag_104,1535,,,,,N,N,0.188,24.00333,0.019923611,22.11667,False,False,False,True,False,False,False,False,False,False,"[1535, 1536, 1537, 1538]"
+43,B,4,SMU_1719c,BsaI,KD_Payload_1,Tag_12,Tag_62,1565,,,,,N,N,0.105,21.33639,6.63e-22,1.33667,False,False,False,True,False,False,False,False,False,False,[1565]
+43,B,5,SMU_1732c,BsaI,KD_Payload_1,Tag_157,Tag_178,1576,,,,,N,N,0.105,22.00306,6.05e-15,1.33667,False,False,False,True,False,False,False,False,False,False,[1576]
+43,E,6,SMU_1773c,BsaI,KD_Payload_1,Tag_115,Tag_123,1612,,,,,N,N,0.109,22.00306,6.47e-22,1.33667,False,False,False,True,False,False,False,False,False,False,[1612]
+43,D,7,SMU_1786,BsaI,KD_Payload_1,Tag_46,Tag_185,1624,,,,,N,N,0.112,22.00306,7.83e-16,1.33667,False,False,False,True,False,False,False,False,False,False,"[1624, 1625]"
+43,C,8,SMU_1802c,BsaI,KD_Payload_1,Tag_56,Tag_92,1638,,,,,N,N,0.11,10.00333,1.98e-18,1.33667,False,False,False,True,False,False,False,False,False,False,"[1638, 1639, 1640, 1641]"
+43,E,1,SMU_1835,BsaI,KD_Payload_1,Tag_6,Tag_55,1669,,,,,N,N,0.113,22.67,3.4175043533e-314,1.33667,False,False,False,True,False,False,False,False,False,False,"[1669, 1670]"
+43,F,1,SMU_1837,BsaI,KD_Payload_1,Tag_35,Tag_84,1671,,,,,N,N,0.114,22.67,3.1e-21,1.33667,False,False,False,True,False,False,False,False,False,False,[1671]
+43,G,1,SMU_1838,BsmBI/Esp3I,KD_Payload_5,Tag_75,Tag_117,1672,,,,,N,N,0.117,22.67,1.33e-13,1.33667,False,False,False,True,False,False,False,False,False,False,"[1672, 1673, 1674, 1675, 1676, 1677, 1678, 1679, 1680]"
+43,F,1,SMU_1860,BsaI,KD_Payload_1,Tag_101,Tag_123,1692,,,,,N,N,0.115,21.33639,5.53e-18,1.33667,False,False,False,True,False,False,False,False,False,False,[1692]
+44,C,1,SMU_1886,BsaI,KD_Payload_2,Tag_33,Tag_160,1712,,,,,N,N,0.142,24.00306,0.000735502,23.62667,False,False,False,True,False,False,False,False,False,False,[1712]
+44,F,2,SMU_1943,BsaI,KD_Payload_1,Tag_62,Tag_152,1764,,,,,N,N,0.116,14.00333,7.6600000000000005e-22,1.33667,False,False,False,True,False,False,False,False,False,False,[1764]
+44,C,3,SMU_1955,BbsI,KD_Payload_3,Tag_33,Tag_70,1773,,,,,N,N,0.111,24.00306,4.41e-21,1.33667,False,False,False,True,False,False,False,False,False,False,"[1773, 1774, 1775, 1776, 1777]"
+44,H,4,SMU_2167,BsaI,KD_Payload_1,Tag_107,Tag_131,1838,,,,,N,N,0.108,22.00306,5.65e-24,1.33667,False,False,False,True,False,False,False,False,False,False,[1838]
+44,A,5,SMU_2166,BsaI,KD_Payload_1,Tag_14,Tag_125,1839,,,,,N,N,0.111,12.00333,3.6e-15,1.33667,False,False,False,True,False,False,False,False,False,False,"[1839, 1840, 1841]"
+44,B,5,SMU_2026c,BbsI,KD_Payload_3,Tag_35,Tag_115,1842,,,,,N,N,0.108,12.00333,-2.89e-15,1.33667,False,False,False,True,False,False,False,False,False,False,[1842]
+44,D,9,SMU_2097,BsaI,KD_Payload_2,Tag_92,Tag_187,1904,,,,,N,N,0.116,23.66972,8.7e-18,1.33667,False,False,False,True,False,False,False,False,False,False,[1904]
+44,E,9,SMU_2098,BsaI,KD_Payload_2,Tag_65,Tag_147,1905,,,,,N,N,0.128,15.67,8.28e-22,1.33667,False,False,False,True,False,False,False,False,False,False,"[1905, 1906, 1907]"
+44,G,9,SMU_2102,BsaI,KD_Payload_1,Tag_75,Tag_125,1909,,,,,N,N,0.14,23.66972,0.002054023,23.66667,False,False,False,True,False,False,False,False,False,False,[1909]
+44,E,1,SMU_2135c,BsaI,KD_Payload_1,Tag_122,Tag_188,1939,,,,,N,N,0.123,11.33639,1.13e-24,1.33667,False,False,False,True,False,False,False,False,False,False,"[1939, 1940, 1941, 1942, 1943, 1944]"
+44,G,1,SMU_2143c,BsaI,KD_Payload_1,Tag_36,Tag_147,1947,,,,,N,N,0.143,24.00306,0.006853224,23.66667,False,False,False,True,False,False,False,False,False,False,"[1947, 1948]"
+44,B,1,SMU_2157,BsaI,KD_Payload_1,Tag_77,Tag_105,1959,,,,,N,N,0.118,2.00333,1.05e-18,1.33667,False,False,False,False,False,False,False,False,False,False,[1959]
+44,C,1,SMU_2158c,BbsI,KD_Payload_3,Tag_4,Tag_22,1960,,,,,N,N,0.118,13.33639,2.0600000000000001e-22,1.33667,False,False,False,True,False,False,False,False,False,False,[1960]

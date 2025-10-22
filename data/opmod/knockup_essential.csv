@@ -1,0 +1,18 @@
+Plate_ID,Row,Col,Gene_ID,Golden_Gate_Enzyme,Payload_Name,PTag_1_ID,PTag_2_ID,Oralgen Gene ID,GI,SMU #,VIMSS (MicrobesOnline #),GeneID,colony_growth,liquid_growth,RawMaxOD,TimeMaxOD,PredVMax,TimePredVMax,PassColony,PassLiquid,PassMaxOD,PassTimeMaxOD,PassVMax,PassTimeVMax,PassAll,Pass5,Pass4,Pass3,Operon Map
+27,E,1,SMU_14,BsaI,KU_Payload_2,Tag_36,Tag_138,12,,,,,N,N,0.665,23.00333,0.166044163,18.44,False,False,True,True,True,True,False,False,True,True,"[12, 13]"
+27,E,4,SMU_80,BsaI,KU_Payload_2,Tag_29,Tag_128,73,,,,,N,N,0.103,0.67,-2.01e-24,0.67,False,False,False,False,False,False,False,False,False,False,"[73, 74, 75, 76, 77, 78, 79, 80]"
+27,H,1,SMU_228,BsaI,KU_Payload_2,Tag_79,Tag_149,208,,,,,N,N,0.613,6.50333,0.22720872,5.7,False,False,True,False,True,True,False,False,False,False,"[208, 209]"
+28,D,1,SMU_457,BsaI,KU_Payload_2,Tag_2,Tag_122,416,,,,,N,N,0.112,4.00278,-5.49e-18,1.33639,False,False,False,False,False,False,False,False,False,False,[416]
+29,H,1,SMU_650,BsaI,KU_Payload_2,Tag_31,Tag_115,594,,,,,N,Y,1.609,13.00333,0.355254599,7.08639,False,True,True,True,True,True,False,True,True,True,"[594, 595, 596, 597, 598, 599, 600]"
+29,F,1,SMU_663,BsaI,KU_Payload_2,Tag_21,Tag_79,607,,,,,N,Y,1.641,14.66972,0.276807152,9.75639,False,True,True,True,True,True,False,True,True,True,"[607, 608, 609, 610, 611, 612, 613, 614, 615, 616]"
+30,D,4,SMU_730,BsaI,KU_Payload_2,Tag_116,Tag_146,667,,,,,Y,N,1.674,13.67,0.344832527,8.95694,True,False,True,True,True,True,False,True,True,True,"[667, 668, 669, 670]"
+30,B,1,SMU_847c,BsaI,KU_Payload_1,Tag_53,Tag_99,772,,,,,N,N,0.153,28.00361,0.026966727,27.66694,False,False,False,True,False,False,False,False,False,False,"[772, 773, 774, 775, 776, 777]"
+30,G,1,SMU_865,BsaI,KU_Payload_2,Tag_30,Tag_101,790,,,,,N,N,1.68,13.33694,0.341967594,8.25694,False,False,True,True,True,True,False,False,True,True,"[790, 791]"
+31,A,4,SMU_959c,BsaI,KU_Payload_1,Tag_82,Tag_83,873,,,,,N,N,0.25,28.00306,0.076186673,27.66639,False,False,True,True,False,False,False,False,False,False,[873]
+31,B,5,SMU_986c,BsaI,KU_Payload_1,Tag_6,Tag_86,897,,,,,N,Y,1.647,13.33667,0.314527026,8.81639,False,True,True,True,True,True,False,True,True,True,[897]
+32,F,2,SMU_1187,BsaI,KU_Payload_1,Tag_63,Tag_116,1086,,,,,N,N,0.7,28.00333,0.254055136,27.66694,False,False,True,True,True,False,False,False,False,False,[1086]
+33,F,1,SMU_1629c,BsaI,KU_Payload_1,Tag_85,Tag_150,1481,,,,,N,N,0.65,28.00333,0.207730182,27.66667,False,False,True,True,True,False,False,False,False,False,[1481]
+34,D,2,SMU_1676c,BbsI,KU_Payload_3,Tag_89,Tag_142,1526,,,,,N,N,0.65,24.00306,0.271573689,23.66639,False,False,True,True,True,False,False,False,False,False,[1526]
+35,A,5,SMU_2166,BsaI,KU_Payload_1,Tag_14,Tag_125,1839,,,,,N,N,0.923,27.33667,0.199666775,23.06667,False,False,True,True,True,False,False,False,False,False,"[1839, 1840, 1841]"
+35,B,5,SMU_2026c,BbsI,KU_Payload_3,Tag_35,Tag_115,1842,,,,,N,N,1.267,27.67,0.293491424,23.36667,False,False,True,True,True,False,False,False,False,False,[1842]
+35,F,1,SMU_2141,BsaI,KU_Payload_1,Tag_64,Tag_110,1945,,,,,N,N,1.673,12.33667,0.35770179,7.43667,False,False,True,True,True,True,False,False,True,True,"[1945, 1946]"
