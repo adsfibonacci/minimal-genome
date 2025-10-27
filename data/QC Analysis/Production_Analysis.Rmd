@@ -1,0 +1,190 @@
+---
+title: "RapidKO Production Analysis"
+author: "Benjamin David"
+date: "2024-04-25"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+
+```{r loaddata, echo=FALSE}
+rapidko <- read.csv("/Users/BDavid/Dropbox (University of Michigan)/JensenLab/data/Rapid KO/SMU_UA159/QC Analysis/growth_database.csv")
+rapidko$successful <- (as.logical(rapidko$PassAll))
+```
+# Production Summary
+
+## Gene Knockouts
+
+
+```{r summary, echo=FALSE}
+n_attempts <- nrow(rapidko)
+is_intergenic <- grepl("intergenic",rapidko$New_ID)
+n_intergenic <- sum(is_intergenic)
+n_annotated=n_attempts-n_intergenic
+n_success <- sum(rapidko$successful) 
+n_annotated_success <- sum(!is_intergenic & rapidko$successful==1)
+n_intergenic_success <- sum(is_intergenic & rapidko$successful==1)
+annotated_rate <- round(100*n_annotated_success/n_annotated,digits=1)
+intergenic_rate <- round(100*n_intergenic_success/n_intergenic,digits=1)
+total_rate <- round(100*n_success/n_attempts,digits=1)
+categories=c("Annotated Genes", "Intergenic Regions","Total")
+success <- c(n_annotated_success,n_intergenic_success,n_success)
+attempts <- c(n_annotated,n_intergenic,n_attempts)
+rate <- c(annotated_rate,intergenic_rate,total_rate)
+df1 <- data.frame(Category=categories,Successful=success, Attempted=attempts, Percent=rate)
+```
+
+We attempted to create `r n_attempts` knockouts in *S. mutans*. In the following summary table, I define a successful knockout as observing both visible colonies and visible growth in liquid culture. If there is any doubt, I classify the knockout as unsuccessful.  
+
+```{r summarytable,echo=FALSE} 
+knitr::kable(df1,col.names=c("","Knockouts","Attempts","Percent"),caption="")
+```
+
+```{r quiveysummary,echo=FALSE}
+q_attempts <- sum(rapidko$quivey_essential=="Y" | rapidko$quivey_essential=="N")
+q_total <- sum(rapidko$quivey_successful=="Y" | rapidko$quivey_successful=="N")
+q_success <- sum(rapidko$quivey_successful=="Y")
+```
+
+The Quivey library targeted `r q_total` loci; however, they only attemped `r q_attempts` knockouts due to technical constraints. Their final library consisted of `r q_success` successful knockouts. The following table is a breakdown of how our library compares to the Quivey library for the subset of loci the Quivey library attempted. 
+
+
+```{r quiveycompare,echo=FALSE}
+us_and_quivey <- sum(rapidko$quivey_successful=="Y" & rapidko$successful)
+us_not_quivey <- sum(rapidko$quivey_essential=="Y" & rapidko$successful)
+not_us_quivey <- sum(rapidko$quivey_successful=="Y" & !rapidko$successful)
+nor_us_quivey <- sum(rapidko$quivey_essential=="Y" & !rapidko$successful)
+breakdown <- c(us_and_quivey, us_not_quivey,not_us_quivey,nor_us_quivey,q_attempts)
+categories <- c("Both", "Us Only", "Quivey Only", "Neither" ,"Total" )
+df2 <- data.frame(Subset=categories,Mutants=breakdown)
+knitr::kable(df2,col.names=c("Subset","Mutants"),caption="")
+```
+### Growth Distributions
+
+```{r, rapidko_plots,echo=FALSE}
+lightred=#ff8c8c
+max_od_threshold=0.25
+t_max_od_threshold=7
+vmax_upper=0.1
+vmax_lower=0.6
+t_vmax_lower=5
+t_vmax_upper=20
+maxod <- ggplot2::ggplot(data=rapidko,aes(x=RawMaxOD))+ 
+  theme_classic()+
+  geom_histogram()+
+  geom_vline(xintercept=max_od_threshold,color="red")+
+  xlab("Maximum OD600")
+tmaxod <- ggplot2::ggplot(data=rapidko,aes(x=TimeMaxOD))+ 
+  theme_classic()+
+  geom_histogram()+
+  geom_vline(xintercept=t_max_od_threshold,color="red")+
+  xlab("Time to Maximum OD600 (hours)")
+vmax <- ggplot2::ggplot(data=rapidko,aes(x=PredVMax))+ 
+  theme_classic()+
+  geom_histogram()+
+  geom_vline(xintercept=vmax_upper,color="red")+
+  geom_vline(xintercept=vmax_lower,color="red")+
+  xlab("Predicted Maximum Growth Rate (OD/hour)")
+tvmax <- ggplot2::ggplot(data=rapidko,aes(x=TimePredVMax))+ 
+  theme_classic()+
+  geom_histogram()+
+  geom_vline(xintercept=t_vmax_upper,color="red")+
+  geom_vline(xintercept=t_vmax_lower,color="red")+
+  xlab("Time to Predicted Maximum Growth Rate (hours)")
+cowplot::plot_grid(maxod,tmaxod,vmax,tvmax,nrow=2,ncol=2)
+
+```
+
+
+##  Operon Modulation
+
+```{r,opmoddata,echo=FALSE}
+opmod <- read.csv("/Users/BDavid/Dropbox (University of Michigan)/JensenLab/data/Rapid KO/SMU_UA159/QC Analysis/OpMod_growth_database.csv")
+opmod$successful <- as.logical(opmod$PassAll)
+N <- nrow(opmod)
+n <- N/2
+k=sum(opmod$successful)
+ku <- opmod$successful[1:n]
+kd <- opmod$successful[(n+1):N]
+modulations <- c("Upregulated","Downregulated")
+success <- c(sum(ku),sum(kd))
+attempts <- c(n,n)
+df <- data.frame(Modulation=modulations,Successs=success, Attempts=attempts)
+
+```
+
+We attempted to create ```r N``` operon modulated strains, ```r n``` upregulatd and ```r n``` downregulated, and successfully made ```r k ``` of them. The table below shows the breakdown by modulation type: 
+
+
+
+```{r, opmodsummary,echo=FALSE}
+upyes_downyes <- round(sum(ku & kd),digits=0)
+upyes_downno <- round(sum(ku & !kd),digits=0)
+upno_downyes <- round(sum(!ku & kd),digits=0)
+upno_downno <- round(sum(!ku & !kd),digits=0)
+
+cats= c("Up Grow","Up No-grow", "**Total**")
+dg <- c(upyes_downyes,upno_downyes,sum(kd))
+dn <- c(upyes_downno,upno_downno,sum(!kd))
+tots <- c(sum(ku),sum(!ku),n)
+df= data.frame(Cat=cats,DG=dg,DN=dn,Tot=tots)
+knitr::kable(df,col.names=c("","Down Grow","Down No-grow","**Total**"),caption="")
+
+```
+
+
+# Technical Analysis
+
+
+## Failures by Enzyme
+
+ 
+
+```{r enzymes,echo=FALSE,warning=FALSE}
+enzymes <- data.frame(table(c(rapidko$Golden_Gate_Enzyme, opmod$Golden_Gate_Enzyme)))
+names(enzymes) <- c("Enzyme","Count")
+failures=rep(0,nrow(enzymes))
+for (i in 1:nrow(enzymes)){
+  failures[i] <- sum(!(c(rapidko$successful,opmod$successful)) & c(rapidko$Golden_Gate_Enzyme,opmod$Golden_Gate_Enzyme) == enzymes$Enzyme[i]);
+}
+enzymes$Failures <- failures
+enzymes$Expected <- round(sum(!(c(rapidko$successful,opmod$successful)))/(N+n_attempts)*enzymes$Count,digits=1)
+
+
+test <- chisq.test(enzymes$Failures,p=enzymes$Expected/sum(enzymes$Expected))
+```
+
+One technical concern we had in the production of the library was that some enzymes may result in higher than expected failure rates. Given a global failure rate of `r round(sum(!(c(rapidko$successful,opmod$successful)))/(N+n_attempts),digits=3)`, we tested whether the observed failures are independent of the golden gate enzyme used. If the failures are independent of the enzyme used, we would expect the distribution of failures to follow the distribution of enzymes used in the library. We compared this expected distribution to the observed distribution of failures using a $\chi^2$-goodness of fit test. As would seem fairly obvious just by looking at the data, the computed $\chi^2$ test statistic suggests that the distribution of failures by enzyme follows the expected distribution ($\chi^2$ value: `r round(test$statistic,digits=2)`, p-value: `r round(test$p.value,digits=3)`).  
+
+```{r enzymestable,echo=FALSE}
+knitr::kable(enzymes,col.names=c("Enzyme","Counts","Observed Failures","Expected"))
+```
+
+
+
+```{r payloads,echo=FALSE,warning=FALSE}
+payloads <- data.frame(table(c(rapidko$Payload_Name,opmod$Payload)))
+names(payloads) <- c("Payload","Count")
+failures=rep(0,nrow(payloads))
+for (i in 1:nrow(payloads)){
+  failures[i] <- sum(!c(rapidko$successful,opmod$successful) & c(rapidko$Payload_Name,opmod$Payload) == payloads$Payload[i])
+}
+payloads$Failures <- failures
+payloads$Expected <- round((1-(n_success+k)/(n_attempts+N))*payloads$Count,digits=1)
+
+
+test <- chisq.test(payloads$Failures,p=payloads$Expected/sum(payloads$Expected))
+```
+
+We were also concerned about the payload cassette used. The payload was determined both by the enzyme used and the gene's orientation in the genome.  There is perhaps less of an argument to use the same independence assumption about the payloads as there is the enzymes. For example, if there is an entire operon that is essential on a particular strand, we would not expect failures by payload to be independent. Since I cannot think of a better alternative, I used the same hypothesis for the payloads. The computed $\chi^2$ test statistic was `r round(test$statistic,digits=2)`, p-value: `r round(test$p.value,digits=3)`. 
+
+```{r payloadstable,echo=FALSE}
+knitr::kable(payloads,col.names=c("Payload","Counts","Observed Failures","Expected"))
+```
+
+
+

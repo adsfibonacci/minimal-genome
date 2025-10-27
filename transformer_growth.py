@@ -11,8 +11,9 @@ from ast import literal_eval
 # -----------------------
 # Config / hyperparams
 # -----------------------
-DATA = "./data/" # Root path, change based off computer file structure 
-n_genes = 1968
+DATA = "./data/" # Root path, change based off computer file structure
+intergenic = False
+n_genes = 1968 if not intergenic else 2435
 embed_dim = 32
 n_heads = 4
 transformer_layers = 1
@@ -35,14 +36,20 @@ Each row is a gene with a -1 indicating the gene is not present and a 1 indicati
 The response is a 1 if the genome grows and a 0 if it does not. 
 Returns a 1969 * 1968 matrix and a 1969 binary response vector. 
 """
-def read_essential_knockouts():
-    df = pd.read_csv(DATA + 'singles/essential_entergenic.csv')
-    oralgen_id = df['Oralgen Gene ID'].tolist()
+def read_essential_knockouts(intergenic):
+    if intergenic:
+        df = pd.read_csv(DATA + 'singles/full_essential.csv')
+        index_id = df['0-index'].tolist()
+        index_id = [ i + 1 for i in index_id ]
+    else:
+        df = pd.read_csv(DATA + 'singles/essential_entergenic.csv')
+        index_id = df['Oralgen Gene ID'].tolist()
+        
     singletons = np.ones((n_genes + 1, n_genes), dtype=np.int64)
     singletons[1:] -= 2 * np.eye(n_genes, dtype=np.int64)
-    response = np.ones(n_genes + 1, dtype=np.int64)
-    response[oralgen_id] = 0
-    return singletons, response, oralgen_id
+    response = np.ones(n_genes + 1)
+    response[index_id] = 0
+    return singletons, response
 
 """
 Entire operons are downregulated in the genome.
@@ -51,7 +58,9 @@ Downregulated operons with multiple genes are treated as an entire operon knocko
 Response is binary with 1 if the genome grows and a 0 if not.
 Returns a 368 x 1968 matrix and a 368 binary response vector. 
 """
-def read_essential_knockdowns():
+def read_essential_knockdowns(intergenic, essential_singles=[]):
+    essential_singles = set(essential_singles)
+    
     df = pd.read_csv(DATA + 'opmod/opmod_growth.csv')
     df['Operon Map'] = [literal_eval(df['Operon Map'][i]) for i in range(len(df))]
     df = df[[len(mapping) > 1 for mapping in df['Operon Map']]]
@@ -59,33 +68,33 @@ def read_essential_knockdowns():
 
     kd_df = df[(df['colony_growth'] != 'Y') | (df['liquid_growth'] != 'Y')]
     kd_df.to_csv(DATA + 'opmod/knockdown_multiple.csv', index=False)
-
     oralgen_id = kd_df['Operon Map'].tolist()
     masks = df['Operon Map'].tolist()
     
     genomes = np.ones((len(df), n_genes), dtype=np.int64)
+    response = .75 * np.ones(len(df))
+    response[kd_df.index] = .25
     for i, mask in enumerate(masks):
         mask = [j-1 for j in mask]
         genomes[i][mask] = -1
-    response = np.ones(len(df), dtype=np.int64)
-    response[kd_df.index] = 0
-    return genomes, response, oralgen_id
+        response[i] -= .25 * (1 - np.pow(2., -len(set(mask).intersection(essential_singles))))
+        pass
 
-X_single, y_single, essential_single = read_essential_knockouts()
-X_opmod, y_opmod, essential_opmod = read_essential_knockdowns()
+    return genomes, response
+
+X_single, y_single = read_essential_knockouts(intergenic)
+X_opmod, y_opmod = read_essential_knockdowns(intergenic, np.where(y_single == 0)[0])
 
 X = np.vstack([X_single, X_opmod])
 y = np.concatenate([y_single, y_opmod])
+y_strat = (y > 0).astype(np.int64) # used since the data is using some T - .25(1 - 2^{-n}) where T = .25 or .75
 
-print(f"X shape: {X.shape}, Y shape: {y.shape}")
-print(f"Essential single knockouts: {len(essential_single)}, Essential downregulated opmods: {len(essential_opmod)}")
 print(f"Embed dim: {embed_dim}, n_heads: {n_heads}, transformer_layers: {transformer_layers}, hidden_clf: {hidden_clf}, dropout: {dropout}")
 
 np.save(DATA + "operons.npy", X)
 np.save(DATA + "response.npy", y)
 
 X_idx_all = [list(np.where(row == -1)[0]) for row in X]
-print(X[0:10, 0:10])
 
 """
 Custom Dataset loader class templated from PyTorch Dataset Class
@@ -154,7 +163,7 @@ skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=seed)
 dataset = KnockoutSetDataset(X_idx_all, y)
 fold_histories = []
 
-for fold, (train_idx, val_idx) in enumerate(skf.split(np.zeros(len(y)), y), 1):
+for fold, (train_idx, val_idx) in enumerate(skf.split(np.zeros(len(y)), y_strat), 1):
     print(f"\n=== Fold {fold} ===")
     train_subset = torch.utils.data.Subset(dataset, train_idx)
     val_subset = torch.utils.data.Subset(dataset, val_idx)
@@ -197,8 +206,12 @@ for fold, (train_idx, val_idx) in enumerate(skf.split(np.zeros(len(y)), y), 1):
                 preds = model(seqs, pad_mask)
                 loss = criterion(preds, labels)
                 val_losses.append(loss.item())
-                preds_all.append((preds.cpu().numpy() > 0.5).astype(int))
-                labels_all.append(labels.cpu().numpy().astype(int))
+                # preds_all.append((preds.cpu().numpy() > 0.5).astype(int))
+                # labels_all.append(labels.cpu().numpy().astype(int))
+                preds_bin = (preds.cpu().numpy() > 0.5).astype(int)
+                labels_bin = (labels.cpu().numpy() > 0.5).astype(int)
+                preds_all.append(preds_bin)
+                labels_all.append(labels_bin)
         val_loss = float(np.mean(val_losses))
         preds_all = np.vstack(preds_all)
         labels_all = np.vstack(labels_all)
@@ -235,4 +248,5 @@ plt.plot(avg_history['val_acc'], label='Val Accuracy', color='green')
 plt.xlabel("Epoch")
 plt.ylabel("Accuracy")
 plt.title("Validation Accuracy per Epoch")
-plt.show()
+plt.savefig("loss_acc.png")
+plt.close()
